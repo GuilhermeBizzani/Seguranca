@@ -2,12 +2,12 @@ import math
 
 __author__ = 'Guilherme'
 
-file = open('entrada.txt', 'r')
+file = open('pg11.txt', 'r')
 leitura = file.read()
 
 print(leitura)
 
-print("Bem vindo ao primeiro criptografador!")
+print("Bem vindo ao criptografador de Vigenere!")
 ent = ''
 while (ent != 0):
     print("Menu:\n1 - Criptografar frase\n2 - Descriptografar frase.\n0 - Sair.")

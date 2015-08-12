@@ -1,45 +1,36 @@
 __author__ = 'Guilherme'
 
-file = open('entrada.txt', 'r')
+file = open('pg11.txt', 'rb')
 leitura = file.read()
+file.close()
 
-print(leitura)
 
-print("Bem vindo ao primeiro criptografador!")
+print("Bem vindo ao criptografador de Ceasar!")
 ent = ''
 while (ent != 0):
     print("Menu:\n1 - Criptografar frase\n2 - Descriptografar frase.\n0 - Sair.")
     ent = int(input('Opcao: '))
     chave = int(input('Digite a chave: '))
+    file2 = open('outraSaidaaaaa.enc', 'wb')
     if(ent == 1):
-        a = ''
+        a = []
         for x in leitura:
-            y = ord(x)
-            if (y < chave):
-                aux = y - chave
-                y = 256 + aux
-            else:
-                z = chr(y - chave)
-            a = a+z
+            y = (x + chave)%256
+            a.append(y)
+        file2.write(bytes(a))
 
-        print ('Frase Original: ' + leitura )
-        print ('Frase Criptografada: ' + a )
+
+        #print ('Frase Original: ' + leitura )
+        #print ('Frase Criptografada: ' + a )
 
     if (ent == 2):
-        a = ''
+        a = []
         for x in leitura:
+            y = (x - chave)%256
+            a.append(y)
+        file2.write(bytes(a))
 
-            y = ord(x)
-            if(y > 256-chave):
-                y = (y + chave)%256
-            else:
-                z = chr(y + chave)
-
-            a = a+z
-
-        print ('Frase Original: ' + leitura )
-        print ('Frase Descriptografada:' + a)
-
-
+        #print ('Frase Original: ' + leitura )
+        #print ('Frase Descriptografada:' + a)
+    file2.close()
 print ('tchau')
-
