@@ -2,7 +2,7 @@ import math
 
 __author__ = 'Guilherme'
 
-file = open('TransSaidaaaa.txt', 'r')
+file = open('saida.txt', 'r')
 leitura = file.read()
 
 print(leitura)
@@ -13,7 +13,7 @@ while 0 != ent:
     print("Menu:\n1 - Criptografar frase\n2 - Descriptografar frase.\n0 - Sair.")
     ent = int(input('Opcao: '))
     chave = int(input('Digite a chave: '))
-    saida = open("TransSaidaaaabbb.txt", "w")
+    saida = open("saida.txt", "w")
     cols = math.ceil(len(leitura)/chave)
     mat = [''] * chave
     for i in range(0, chave):  #nao
