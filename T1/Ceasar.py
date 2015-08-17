@@ -1,17 +1,21 @@
 __author__ = 'Guilherme'
 
-file = open('pg11.txt', 'rb')
-leitura = file.read()
-file.close()
-
 
 print("Bem vindo ao criptografador de Ceasar!")
-ent = ''
+ent = 1
 while (ent != 0):
+
+    print("Digite o nome do programa de entrada COM A EXTENSAO!")
+    arq = input('->')
+
+    file = open(arq, 'rb')
+    leitura = file.read()
+    file.close()
+
     print("Menu:\n1 - Criptografar frase\n2 - Descriptografar frase.\n0 - Sair.")
     ent = int(input('Opcao: '))
     chave = int(input('Digite a chave: '))
-    file2 = open('outraSaidaaaaa.enc', 'wb')
+    file2 = open('SaidaCeasar.enc', 'wb')
     if(ent == 1):
         a = []
         for x in leitura:
@@ -33,4 +37,4 @@ while (ent != 0):
         #print ('Frase Original: ' + leitura )
         #print ('Frase Descriptografada:' + a)
     file2.close()
-print ('tchau')
+print('tchau')

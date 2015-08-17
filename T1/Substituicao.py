@@ -35,8 +35,6 @@ while 1:
     leitura = file.read()
     file.close()
 
-    saida = open('saidaSubs.txt', 'wb')
-
     file2 = open("lista.bin", "rb")
     listR = file2.read()
     file2.close()
@@ -45,9 +43,12 @@ while 1:
     listR2 = file3.read()
     file3.close()
 
+    saida = open('saidaSubs.enc', 'wb')
+
     print("Menu:\n1 - Criptografar frase\n2 - Descriptografar frase.\n0 - Sair.")
     ent = int(input('Opcao: '))
-
+    if ent == 0:
+        break
 
     if(ent==1):
         a = []
@@ -65,3 +66,4 @@ while 1:
 
         saida.write(bytes(a))
 
+    saida.close()

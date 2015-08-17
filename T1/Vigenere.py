@@ -2,16 +2,23 @@ import math
 
 __author__ = 'Guilherme'
 
-file = open('Vigen.txt', 'rb')
-leitura = file.read()
-
 #print(leitura)
 
 print("Bem vindo ao criptografador de Vigenere!")
-ent = ''
+ent = 1
 while (ent != 0):
+
+    print("Digite o nome do programa de entrada COM A EXTENSAO!")
+    arq = input('->')
+
+    file = open(arq, 'rb')
+    leitura = file.read()
+    file.close()
+
     print("Menu:\n1 - Criptografar frase\n2 - Descriptografar frase.\n0 - Sair.")
     ent = int(input('Opcao: '))
+    if ent == 0:
+        break
     chave = input('Digite a chave: ')
 
     #qnt = math.ceil(len(leitura) / len(chave))
@@ -21,7 +28,7 @@ while (ent != 0):
 
 
 
-    saida = open('Vigen.txt','wb')
+    saida = open('SaidaVigenere.enc','wb')
     a = []
     if(ent == 1):
         cont = 0
