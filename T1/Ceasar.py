@@ -24,6 +24,7 @@ while (ent != 0):
         file2.write(bytes(a))
 
 
+
         #print ('Frase Original: ' + leitura )
         #print ('Frase Criptografada: ' + a )
 

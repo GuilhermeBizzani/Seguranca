@@ -4,6 +4,10 @@ __author__ = 'Guilherme'
 
 #print(leitura)
 
+fileC = open("chaveVigenere.txt", "rb")
+chave = fileC.read()
+fileC.close()
+
 print("Bem vindo ao criptografador de Vigenere!")
 ent = 1
 while (ent != 0):
@@ -19,21 +23,18 @@ while (ent != 0):
     ent = int(input('Opcao: '))
     if ent == 0:
         break
-    chave = input('Digite a chave: ')
+    #chave = input('Digite a chave: ')
 
-    #qnt = math.ceil(len(leitura) / len(chave))
-    #for i in range(1, qnt):
-    #    chav = chav + chave
-    #print('Chav: ' + chav)
-
-
+    file2 = open("ChaveVigenere.txt", "rb")
+    chave = file2.read()
+    file2.close()
 
     saida = open('SaidaVigenere.enc','wb')
     a = []
     if(ent == 1):
         cont = 0
         for x in leitura:
-            y = (x + int(ord(chave[cont]))) % 256
+            y = (x + int(chave[cont])) % 256
             cont+=1
             if cont == (len(chave)-1):
                 cont = 0
@@ -50,7 +51,7 @@ while (ent != 0):
     if(ent == 2):
         cont = 0
         for x in leitura:
-            y = (x - int(ord(chave[cont]))) % 256
+            y = (x - int(chave[cont])) % 256
             cont+=1
             if cont == (len(chave)-1):
                 cont = 0

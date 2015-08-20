@@ -75,6 +75,7 @@ while 0 != ent:
             for j in range(total):
                 if mat[j][i] == 158:
                     mat[j][i] = 0
+
                 aux.append(mat[j][i])
         ##print(aux)
         saida.write(bytes(aux))

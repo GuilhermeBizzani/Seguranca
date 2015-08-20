@@ -1,8 +1,0 @@
-pg11 : CEASAR com chave 5
-
-
-
-
-
-
-pg174 : VIGENERE com chave abcd
