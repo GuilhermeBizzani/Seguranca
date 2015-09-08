@@ -14,7 +14,7 @@ for i in range(256):
     list.append(0)
 
 for i in range(len(certo)):
-    list[certo[i]] = errado[i]
+    list[errado[i]] = certo[i]
 
 file3 = open("ListaSubs.txt", "wb")
 

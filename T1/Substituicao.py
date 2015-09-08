@@ -28,18 +28,18 @@ print("Listas criadas com sucesso")
 '''
 while 1:
 
-    print("Digite o nome do programa de entrada COM A EXTENSAO!")
+    print("Digite o nome do arquivo de entrada COM A EXTENSAO!")
     arq = input('->')
 
     file = open(arq, 'rb')
     leitura = file.read()
     file.close()
 
-    file2 = open("lista.bin", "rb")
+    file2 = open("ListaSubs.txt", "rb")
     listR = file2.read()
     file2.close()
 
-    file3 = open("lista2.bin", "rb")
+    file3 = open("ListaSubs.txt", "rb")
     listR2 = file3.read()
     file3.close()
 
@@ -67,3 +67,4 @@ while 1:
         saida.write(bytes(a))
 
     saida.close()
+    print("Fim.")

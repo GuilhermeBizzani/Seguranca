@@ -1,11 +1,11 @@
 __author__ = 'Guilherme'
 
 
-file1 = open("inputs/pg174.txt", "rb")
+file1 = open("inputs/pg27827.txt", "rb")
 certo = file1.read()
 file1.close()
 
-file2 = open("outputs/pg174.txt.enc", "rb")
+file2 = open("outputs/pg27827.txt.enc", "rb")
 errado = file2.read()
 file2.close()
 

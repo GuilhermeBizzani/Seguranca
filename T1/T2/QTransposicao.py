@@ -1,52 +1,49 @@
 __author__ = 'Guilherme'
+import gc
+gc.disable()
 
-
-file1 = open("inputs/pg11.txt", "rb")
+file1 = open("inputs/pg1342.txt", "rb")
 certo = file1.read()
 file1.close()
 
-file2 = open("saidaTrans.txt", "rb")
+file2 = open("outputs/pg1342.txt.enc", "rb")
 errado = file2.read()
 file2.close()
 
 binda = 99999999
 chave = 1
 while chave < binda:
-    chave += 1
-    mat = []
-    cont = 0
-    coluna = []
-    total = 1
-    for x in certo:
-        if cont == chave:
-            mat.append(coluna)
-            ##print(coluna)
-            coluna = []
-            cont = 0
-            total += 1
-        ##print(chr(x))
-        coluna.append(x)
-        cont += 1
-    if len(coluna) < chave:
-        for k in range(len(coluna),chave):
-            coluna.append(158)
-    mat.append(coluna)
-    ##print(mat)
-    aux = []
-    for i in range(chave):
-        for j in range(total):
-            aux.append(mat[j][i])
-    ##print(aux)
+    #print('Chave Atual: ',chave)
 
+    saida = []
+    for i in range(len(errado)):
+        saida.append(0)
 
-    flag = 0
-    for i in range(len(aux)):
-        if(aux[i] != errado[i]):
-            flag = 1
+    p = 0
+    at =0
+
+    for c in errado:
+        if p >= len(errado):
+            at += 1
+            p = at
+        saida[p] = c
+        p += chave
+
+    dif = 0
+    for s in range(len(certo)):
+        if saida[s] != certo[s]:
+            dif = 1
             break
 
-    if(flag == 0):
-        print("Deu certo!!!! Chave: "+str(chave))
+    if dif == 0:
+        print("Decifrado com sucesso utilizando a chave ",chave," !")
+        NomSai = "SaiTrans.txt"
+        SaiArq = open(NomSai,"wb")
+        SaiArq.write(bytes(saida))
+        SaiArq.close()
         break
     else:
-        print("Chave "+str(chave)+" nao deu certo!")
+        chave += 1
+
+print("\nProcesso Finalizado!")
+

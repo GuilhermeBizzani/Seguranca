@@ -13,6 +13,7 @@ deumerda = 0
 chaveachada = (errado[0] - certo[0]) % 256
 
 for i in range (0,a):
+    print("Chave: ",i)
     if chaveachada != (errado[i] - certo[i]) % 256 :
         deumerda = 1
 

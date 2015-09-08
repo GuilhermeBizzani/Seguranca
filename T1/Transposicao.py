@@ -2,12 +2,11 @@ import math
 
 __author__ = 'Guilherme'
 
-
 print("Bem vindo ao criptografador de Transposicao!")
 ent = 1
 while 0 != ent:
 
-    print("Digite o nome do programa de entrada COM A EXTENSAO!")
+    print("Digite o nome do arquivo de entrada COM A EXTENSAO!")
     arq = input('->')
 
     file = open(arq, 'rb')
