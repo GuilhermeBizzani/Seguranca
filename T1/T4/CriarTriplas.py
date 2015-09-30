@@ -1,25 +1,50 @@
 __author__ = 'Guilherme'
+
 import sys
 import codecs
+
 sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
+dc = 1
+
+arq = open("outputs/pg76.txt.enc","rb")
+sai = open("DICDec1.txt","w")
+Ax = arq.read()
+
 class Tripla():
-    def __init__(self, atrip, aqtd):
-        self.trip = []
-        self.trip = atrip
-        self.qtd = aqtd
+    def __init__(self,vtri,vqtd):
+        self.tri = []
+        self.tri = vtri
+        self.qtd = vqtd
 
+print("ETAPA 1")
+Triplas = []
+SemRept = []
+for x in range(len(Ax)-(dc-1)):
+    trioEnt = Ax[x:x+dc]
+    trip = []
+    for t in trioEnt:
+        trip.append(t)
+    Triplas.append(trip)
+    if trip not in SemRept:
+        SemRept.append(trip)
 
-arq = open("dicionario.txt",'rb')
-entrada = arq.read()
-entrada = entrada[0:10000]
-print("Arquivo lido!")
-arq.close()
+print("ETAPA 2")
+ComTot = [Tripla]
+ComTot.clear()
+for item in SemRept:
+    tot = Triplas.count(item)
+    ComTot.append((item,tot))
 
-out = open("sai.txt", "wb")
-triplas = []
-for i in range(len(entrada)-3):
-    aux = entrada[i:i+3]
-    triplas.append(aux)
+print("ETAPA 3")
+ComTot.sort(key=lambda x: x[1])
+print("ETAPA 4")
+ComTot.reverse()
+print("ETAPA 5")
+for item in ComTot:
+    for i in item[0]:
+        sai.write(str(i)+" ")
+    sai.write(str(item[1])+"\n")
 
-
+sai.close()
+print("feito.")
