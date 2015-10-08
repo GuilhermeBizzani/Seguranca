@@ -5,7 +5,7 @@ arqCif = open("outputs/pg76.txt.enc", "rb")
 cifrado = arqCif.read()
 arqCif.close()
 
-arqTab = open("tabela1.txt", "r")
+arqTab = open("tabela22.txt", "r")
 tabela = arqTab.read()
 arqTab.close()
 
