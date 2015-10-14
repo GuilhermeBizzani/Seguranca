@@ -1,9 +1,9 @@
 __author__ = 'Guilherme'
 
-quantos = 10
+quantos = 20
 
-arqCript = open("DICDec1.txt", "r")
-arqLivro = open("DICLivro1.txt", "r")
+arqCript = open("DICDec.txt", "r")
+arqLivro = open("DICLimpo.txt", "r")
 
 leCript = arqCript.readlines()
 leLivro = arqLivro.readlines()
@@ -11,7 +11,7 @@ leLivro = arqLivro.readlines()
 arqCript.close()
 arqLivro.close()
 
-tabelaSai = open("tabela1.txt", "wb")
+tabelaSai = open("tabela3.txt", "wb")
 
 dez = 0
 

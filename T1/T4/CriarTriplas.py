@@ -5,10 +5,10 @@ import codecs
 
 sys.stdout = codecs.getwriter("utf-8")(sys.stdout.detach())
 
-dc = 1
-
+dc = 3
+print("cuuuuu")
 arq = open("outputs/pg76.txt.enc","rb")
-sai = open("DICDec1.txt","w")
+sai = open("DICDec.txt","w")
 Ax = arq.read()
 
 class Tripla():

@@ -73,7 +73,7 @@ arq2.close()
 leit = []
 for f in leita:
     leit.append(f)
-tab = open("tabela.txt","rb")
+tab = open("tabela3.txt","rb")
 tabelaa = tab.read()
 tab.close()
 
@@ -113,9 +113,12 @@ for x in final:
             aux2 = x[0]
 
             for h in range(len(x[0])):
-                tabela[aux[h]] = aux2[h]
+                if tabela[aux[h]] == 63:
+                    tabela[aux[h]] = aux2[h]
+            break
 
-tab2 = open("tabela22.txt","wb")
+
+tab2 = open("tabela33.txt","wb")
 tab2.write(bytes(tabela))
 tab2.close()
 
